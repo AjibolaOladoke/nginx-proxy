@@ -1,0 +1,14 @@
+services:
+  nginx-proxy:
+    environment:
+      HTTP_PORT: 8080
+    ports:
+      - "8080:8080"
+
+  web1:
+    image: web
+    expose:
+      - "81"
+    environment:
+      WEB_PORTS: "81"
+      VIRTUAL_HOST: "*.nginx-proxy.tld"

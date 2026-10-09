@@ -1,0 +1,14 @@
+services:
+  nginx-proxy:
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${PYTEST_MODULE_PATH}/test_fallback.data/custom-fallback.conf:/etc/nginx/conf.d/zzz-custom-fallback.conf:ro
+
+  http-only:
+    image: web
+    expose:
+      - "83"
+    environment:
+      WEB_PORTS: "83"
+      VIRTUAL_HOST: http-only.nginx-proxy.test
+      HTTPS_METHOD: nohttps

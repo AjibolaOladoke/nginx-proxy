@@ -1,0 +1,12 @@
+services:
+  nginx-proxy:
+    environment:
+      HTTPS_METHOD: nohttps
+
+  http-only:
+    image: web
+    expose:
+      - "83"
+    environment:
+      WEB_PORTS: "83"
+      VIRTUAL_HOST: http-only.nginx-proxy.test

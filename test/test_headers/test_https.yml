@@ -1,0 +1,22 @@
+services:
+  nginx-proxy:
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${PYTEST_MODULE_PATH}/certs:/etc/nginx/certs:ro
+
+  web:
+    image: web
+    expose:
+      - "80"
+    environment:
+      WEB_PORTS: "80"
+      VIRTUAL_HOST: web.nginx-proxy.tld
+
+  web-server-tokens-off:
+    image: web
+    expose:
+      - "80"
+    environment:
+      WEB_PORTS: "80"
+      VIRTUAL_HOST: web-server-tokens-off.nginx-proxy.tld
+      SERVER_TOKENS: "off"

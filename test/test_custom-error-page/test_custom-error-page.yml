@@ -1,0 +1,5 @@
+services:
+  nginx-proxy:
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${PYTEST_MODULE_PATH}/50x.html:/usr/share/nginx/html/errors/50x.html:ro

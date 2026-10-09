@@ -1,0 +1,39 @@
+services:
+  nginx-proxy:
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${PYTEST_MODULE_PATH}/my_custom_proxy_settings_f00.conf:/etc/nginx/vhost.d/web1.nginx-proxy.example:ro
+      - ${PYTEST_MODULE_PATH}/my_custom_proxy_settings_bar.conf:/etc/nginx/vhost.d/97db860fb631ba3c047db9fec60638fd72a180b1:ro
+      - ${PYTEST_MODULE_PATH}/my_custom_proxy_settings_baz.conf:/etc/nginx/vhost.d/*.nginx-proxy.example:ro
+
+  web1:
+    image: web
+    expose:
+      - "81"
+    environment:
+      WEB_PORTS: "81"
+      VIRTUAL_HOST: web1.nginx-proxy.example
+
+  web2:
+    image: web
+    expose:
+      - "82"
+    environment:
+      WEB_PORTS: "82"
+      VIRTUAL_HOST: web2.nginx-proxy.example
+  
+  regex:
+    image: web
+    expose:
+      - "83"
+    environment:
+      WEB_PORTS: "83"
+      VIRTUAL_HOST: ~^.*\.nginx-proxy\.regex$$ # we need to double the `$` because of docker compose variable interpolation
+
+  wildcard:
+    image: web
+    expose:
+      - "84"
+    environment:
+      WEB_PORTS: "84"
+      VIRTUAL_HOST: "*.nginx-proxy.example" # wildcard for all subdomains

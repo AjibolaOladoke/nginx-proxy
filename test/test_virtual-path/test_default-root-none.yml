@@ -1,0 +1,13 @@
+services:
+  nginx-proxy:
+    environment:
+      DEFAULT_ROOT: none
+
+  web:
+    image: web
+    expose:
+      - "80"
+    environment:
+      WEB_PORTS: "80"
+      VIRTUAL_HOST: web.nginx-proxy.test
+      VIRTUAL_PATH: /path

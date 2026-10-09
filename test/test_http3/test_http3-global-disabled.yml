@@ -1,0 +1,12 @@
+services:
+#  nginx-proxy:
+#    environment:
+#      ENABLE_HTTP3: "false"    #Disabled by default
+
+  http3-global-disabled:
+    image: web
+    expose:
+      - "80"
+    environment:
+      WEB_PORTS: "80"
+      VIRTUAL_HOST: http3-global-disabled.nginx-proxy.tld

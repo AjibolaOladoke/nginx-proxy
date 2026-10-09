@@ -1,0 +1,16 @@
+services:
+  nginx-proxy:
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${PYTEST_MODULE_PATH}/test_fallback.data/withdefault.certs:/etc/nginx/certs:ro
+    environment:
+      HTTPS_METHOD: redirect
+
+  https-only:
+    image: web
+    expose:
+      - "82"
+    environment:
+      WEB_PORTS: "82"
+      HTTPS_METHOD: nohttp
+      VIRTUAL_HOST: https-only.nginx-proxy.test

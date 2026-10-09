@@ -1,0 +1,30 @@
+volumes:
+  nginx_conf:
+
+
+services:
+  nginx-proxy-nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - nginx_conf:/etc/nginx/conf.d:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    labels:
+      - "com.github.nginx-proxy.nginx-proxy.nginx"
+
+  nginx-proxy-dockergen:
+    image: nginxproxy/nginx-proxy:test-dockergen
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - nginx_conf:/etc/nginx/conf.d
+
+  web:
+    image: web
+    container_name: whoami
+    expose:
+      - "80"
+    environment:
+      WEB_PORTS: "80"
+      VIRTUAL_HOST: whoami.nginx-proxy.tld
