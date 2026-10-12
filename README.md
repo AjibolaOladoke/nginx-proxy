@@ -6,17 +6,17 @@ We keep a working index for product and engineering, and nginx-proxy is the entr
 
 ## Images
 
-[![nginx-proxy](images/preview.png)](https://github.com/Swift-Tech-Co)
+[![nginx-proxy](images/preview.png)](https://github.com/Swift-Tech-Co/nginx-proxy)
 
 ## About this repository
 > [!NOTE]
 > We welcome contributions and feedback from the community!  
-> For more information about our services, including free and paid SSL/TLS certificates, visit https://www.swifttechco.com
+> For more information about our services, including free and paid SSL/TLS certificates, visit https://github.com/Swift-Tech-Co/nginx-proxy
 <p align="center">
-	<a href="https://www.swifttechco.com">
+	<a href="https://github.com/Swift-Tech-Co/nginx-proxy">
 		<picture>
-			<source media="(prefers-color-scheme: dark)" srcset="https://www.swifttechco.com">
-			<source media="(prefers-color-scheme: light)" srcset="https://www.swifttechco.com">
+			<source media="(prefers-color-scheme: dark)" srcset="https://github.com/Swift-Tech-Co/nginx-proxy">
+			<source media="(prefers-color-scheme: light)" srcset="https://github.com/Swift-Tech-Co/nginx-proxy">
 			
 		</picture>
 	</a>
@@ -36,13 +36,21 @@ Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: swifttechco.com
+- Website: https://github.com/Swift-Tech-Co/nginx-proxy
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [nginx-proxy/nginx-proxy](https://github.com/nginx-proxy/nginx-proxy) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
 
 ## Sources
 
